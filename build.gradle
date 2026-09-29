@@ -2,17 +2,36 @@ plugins {
     id 'java'
 }
 
-group = 'ali.example'
+group = 'com.saucedemo'
 version = '1.0-SNAPSHOT'
 
 repositories {
     mavenCentral()
 }
 
+ext {
+    seleniumVersion = '4.49.0'
+    cucumberVersion = '7.34.8'
+    webDriverManagerVersion = '6.3.4'
+}
+
 dependencies {
-    testImplementation platform('org.junit:junit-bom:6.0.0')
+
+    // Selenium
+    testImplementation "org.seleniumhq.selenium:selenium-java:${seleniumVersion}"
+
+    // WebDriverManager
+    testImplementation "io.github.bonigarcia:webdrivermanager:${webDriverManagerVersion}"
+
+    // Cucumber
+    testImplementation "io.cucumber:cucumber-java:${cucumberVersion}"
+    testImplementation "io.cucumber:cucumber-junit-platform-engine:${cucumberVersion}"
+
+    // JUnit
     testImplementation 'org.junit.jupiter:junit-jupiter'
-    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+
+    // JUnit Platform
+    testImplementation 'org.junit.platform:junit-platform-suite'
 }
 
 test {

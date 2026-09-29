@@ -1,4 +1,16 @@
 package stepdefinitions;
 
-public class HomeStepDef {
+import base.BaseTest;
+import io.cucumber.java.en.Then;
+import pages.HomePage;
+
+public class HomeStepDef extends BaseTest {
+
+    private HomePage homePage;
+
+    @Then("user is on homepage")
+    public void userIsOnHomepage() {
+        homePage = new HomePage(driver);
+        homePage.validateOnHomepage();
+    }
 }
