@@ -22,7 +22,9 @@ Web UI automation testing framework using:
 - Login with empty username
 - Login with empty password
 
-## How to Run
+## How to Run / Cara runningnya
 
 ```bash
 gradlew.bat clean test
+
+
