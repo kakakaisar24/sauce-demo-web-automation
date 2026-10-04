@@ -1,30 +1,72 @@
-# sauce-demo-web-automation
-# SauceDemo Web Automation Testing
+# Automation Test Framework - Web UI & API
 
-Web UI automation testing framework using:
+Automation test framework untuk melakukan pengujian Web UI dan API dalam satu repository.
 
-- Java
-- Gradle
+Project ini dibuat menggunakan Java, Gradle, Selenium WebDriver, Rest Assured, Cucumber, JUnit, dan Page Object Model.
+
+## Tech Stack
+
+- Java 26
+- Gradle 9.6
 - Selenium WebDriver
+- Rest Assured
 - Cucumber
-- JUnit
-- Page Object Model
+- JUnit 5
+- WebDriverManager
+- GitHub Actions
 
-## Test Scenarios
+## Project Structure
 
-### Positive Test
-- Login with valid username and password
-
-### Negative Test
-- Login with invalid password
-
-### Boundary Test
-- Login with empty username
-- Login with empty password
-
-## How to Run / Cara runningnya
-
-```bash
-gradlew.bat clean test
-
-
+```text
+sauce-demo-web-automation/
+│
+├── .github/
+│   └── workflows/
+│       └── main.yml
+│
+├── gradle/
+│   └── wrapper/
+│
+├── src/
+│   └── test/
+│       ├── java/
+│       │   │
+│       │   ├── base/
+│       │   │   └── BaseTest.java
+│       │   │
+│       │   ├── hooks/
+│       │   │   └── CucumberHooks.java
+│       │   │
+│       │   ├── runner/
+│       │   │   └── CucumberTest.java
+│       │   │
+│       │   ├── web/
+│       │   │   ├── pages/
+│       │   │   │   ├── LoginPage.java
+│       │   │   │   └── HomePage.java
+│       │   │   │
+│       │   │   └── stepdefinitions/
+│       │   │       ├── LoginStepDef.java
+│       │   │       └── HomeStepDef.java
+│       │   │
+│       │   └── api/
+│       │       ├── clients/
+│       │       │   └── UserApi.java
+│       │       │
+│       │       └── stepdefinitions/
+│       │           └── UserApiStepDef.java
+│       │
+│       └── resources/
+│           └── features/
+│               ├── web/
+│               │   └── login.feature
+│               │
+│               └── api/
+│                   └── user.feature
+│
+├── .gitignore
+├── build.gradle
+├── gradlew
+├── gradlew.bat
+├── README.md
+└── settings.gradle
