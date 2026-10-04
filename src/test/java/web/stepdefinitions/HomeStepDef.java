@@ -1,8 +1,8 @@
-package stepdefinitions;
+package web.stepdefinitions;
 
 import base.BaseTest;
 import io.cucumber.java.en.Then;
-import pages.HomePage;
+import web.pages.HomePage;
 
 public class HomeStepDef extends BaseTest {
 

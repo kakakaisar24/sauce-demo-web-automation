@@ -1,3 +1,5 @@
+@web
+@login
 Feature: Login
 
   @valid-login

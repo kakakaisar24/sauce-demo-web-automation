@@ -10,9 +10,12 @@ repositories {
 }
 
 ext {
+
     seleniumVersion = '4.49.0'
     cucumberVersion = '7.34.8'
     webDriverManagerVersion = '6.3.4'
+    restAssuredVersion = '6.0.1'
+
 }
 
 dependencies {
@@ -32,8 +35,41 @@ dependencies {
 
     // JUnit Platform
     testImplementation 'org.junit.platform:junit-platform-suite'
+
+    // Rest Assured
+    testImplementation "io.rest-assured:rest-assured:${restAssuredVersion}"
+
+
 }
 
 test {
     useJUnitPlatform()
+}
+
+tasks.register('apiTest', Test) {
+    description = 'Runs Cucumber API tests'
+    group = 'verification'
+
+    dependsOn testClasses
+
+    testClassesDirs = sourceSets.test.output.classesDirs
+    classpath = sourceSets.test.runtimeClasspath
+
+    useJUnitPlatform()
+
+    systemProperty 'cucumber.filter.tags', '@api'
+}
+
+tasks.register('webTest', Test) {
+    description = 'Runs Cucumber Web UI tests'
+    group = 'verification'
+
+    dependsOn testClasses
+
+    testClassesDirs = sourceSets.test.output.classesDirs
+    classpath = sourceSets.test.runtimeClasspath
+
+    useJUnitPlatform()
+
+    systemProperty 'cucumber.filter.tags', '@web'
 }

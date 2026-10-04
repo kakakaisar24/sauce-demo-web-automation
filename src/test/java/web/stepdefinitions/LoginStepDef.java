@@ -1,11 +1,12 @@
-package stepdefinitions;
+package web.stepdefinitions;
 
 import base.BaseTest;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import pages.LoginPage;
+import web.pages.LoginPage;
+
 
 public class LoginStepDef extends BaseTest {
 
