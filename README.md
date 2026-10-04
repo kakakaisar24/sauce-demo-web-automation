@@ -70,3 +70,7 @@ sauce-demo-web-automation/
 ├── gradlew.bat
 ├── README.md
 └── settings.gradle
+
+## CI Validation
+
+This repository uses GitHub Actions to automatically execute the automation test suite for Pull Requests.
